@@ -1,6 +1,6 @@
 # GUINOO_BCA188_Laboratory8
 
-## Pin Table
+## 1. Pin Table
 
 | Signal | GPIO Used |
 |---|---:|
