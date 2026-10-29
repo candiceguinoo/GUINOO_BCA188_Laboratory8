@@ -61,5 +61,24 @@ Figure 3. SPI Loopback Circuit Diagram
 <img width="1259" height="912" alt="5ee5dbf9-2810-48ee-b47e-8272dbbcab37" src="https://github.com/user-attachments/assets/e779d56b-63f5-4aa5-b6fc-89f650a3a1c4" />
 - The UART Loopback Serial Monitor Output shows repeated “PING” messages
 
-## 3. Expected vs Observed
+## 4. Expected vs Observed
 
+| Test | Expected | Observed |
+|---|---|---|
+| UART with jumper | PING received | PING received successfully |
+| UART without jumper | No data received | No PING received |
+| I2C with module | Device detected | Device detected at 0x3C |
+| I2C without module | No device detected | No I2C device found |
+| SPI with jumper | Data received correctly (0xA5) | 0xA5 received successfully |
+| SPI without jumper | Incorrect data received | 0xFF and 0x00 received |
+| Sketch at 9600, monitor at 115200 | Unreadable output | Unreadable characters appeared |
+| Sketch at 9600, monitor at 9600 | Readable output | Repeated PING messages appeared |
+
+## 5. Questions
+
+1. Why does UART need both sides to use the same baud rate, while SPI uses a clock line?
+   - UART needs the same baud rate so both sides can send and receive data at the correct speed. SPI uses a clock line to control when data is sent and received.
+2. Why can two devices with the same address not share one I²C bus?
+   - Two devices with the same address can cause conflicts because the controller cannot easily tell which device is responding. Each device should have a unique address on the same I²C bus.
+3. Why is CS set HIGH between SPI transfers?
+   - CS is set HIGH to deselect the SPI device after a transfer. This prevents the device from responding to data meant for another device.
