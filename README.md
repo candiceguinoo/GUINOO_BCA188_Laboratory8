@@ -52,3 +52,14 @@ Figure 3. SPI Loopback Circuit Diagram
 ### • SPI without Jumper Wires
 <img width="1535" height="862" alt="5f8f64c2-ae63-4ac5-a115-b114a74dd31d" src="https://github.com/user-attachments/assets/608fa2dc-8f66-4c78-9881-612094edff78" />
 - SPI Loopback Serial Monitor Output showing received values of 0xFF and 0x00 without jumper wires
+
+### • Sketch at 9600, monitor at 115200 (UART Loopback)
+<img width="1261" height="858" alt="dafa0560-1295-45ee-af0f-191291583749" src="https://github.com/user-attachments/assets/1d2093a6-449e-46d0-9367-1d56bfcd2479" />
+- The UART Loopback Serial Monitor Output shows unreadable characters
+
+### • Sketch at 9600, monitor at 9600 (UART Loopback)
+<img width="1259" height="912" alt="5ee5dbf9-2810-48ee-b47e-8272dbbcab37" src="https://github.com/user-attachments/assets/e779d56b-63f5-4aa5-b6fc-89f650a3a1c4" />
+- The UART Loopback Serial Monitor Output shows repeated “PING” messages
+
+## 3. Expected vs Observed
+
